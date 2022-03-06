@@ -14,6 +14,4 @@ Please check if your PR fulfills the following requirements:
 - [ ] Docs have been added / updated (for bug fixes / features).
 - [ ] I have performed a self-review of my own code.
 
-<!-- If this PR contains a breaking change, please describe the impact and migration path for existing applications below. -->
-
 ## Other information
