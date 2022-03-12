@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" class="md">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes, viewport-fit=cover" />
@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://polyfill.io/" crossorigin="anonymous" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin="anonymous" />
 
-  <link rel="icon" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/svg/logo-pwa.svg" />
+  <link rel="icon" href="/images/icon-192.png" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#3277b9" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#3277b9" />
 
@@ -25,22 +25,24 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Alwatr PWA" />
-  <link rel="apple-touch-startup-image" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/svg/logo-pwa.svg" />
+  <link rel="apple-touch-startup-image" href="/images/icon-192.png" />
 
   <!-- Home screen icons -->
-  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/svg/logo-pwa.svg" />
+  <link rel="apple-touch-icon" href="/images/icon-192.png" />
 
   <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/npm/ionicons@6.0.1/dist/svg/logo-pwa.svg" />
+  <meta name="msapplication-TileImage" content="/images/icon-192.png" />
   <meta name="msapplication-TileColor" content="#3277b9" />
   <meta name="msapplication-tap-highlight" content="no" />
 
-  <link
+  <!-- <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@alwatr/logger@0.8.0/font.css"
     media="print"
     onload="this.onload=null; this.media='all'"
-  />
+  /> -->
+
+  <link rel="stylesheet" href="src/global.css" />
 
   <style>
     html {
@@ -66,6 +68,7 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       -moz-osx-font-smoothing: grayscale;
+      background-color: #3277b9;
     }
 
     .noscript {
@@ -85,7 +88,9 @@
   <alwatr-pwa></alwatr-pwa>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.toggleAttribute"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.11/dist/ionic/ionic.esm.js"></script>
   <script type="module" src="src/alwatr-pwa.js"></script>
+  <script nomodule defer src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.11/dist/ionic/ionic.js"></script>
 
   <noscript>
     <div class="noscript">
