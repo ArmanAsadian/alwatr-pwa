@@ -16,7 +16,11 @@ const config = {
   ],
   middleware: [(context, next) => {
     // if file not found, return app index.html
-    if (fs.existsSync(config.rootDir + context.url) !== true || context.url === '/') {
+    if (!(
+      context.url === '/' ||
+      context.url.startsWith('/__web-dev-server') ||
+      fs.existsSync(config.rootDir + context.url)
+    )) {
       context.url = config.appIndex;
     }
     return next();
