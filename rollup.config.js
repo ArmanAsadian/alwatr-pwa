@@ -1,5 +1,5 @@
-import html from '@web/rollup-plugin-html';
-import polyfillsLoader from '@web/rollup-plugin-polyfills-loader';
+import {rollupPluginHTML} from '@web/rollup-plugin-html';
+import {polyfillsLoader} from '@web/rollup-plugin-polyfills-loader';
 import resolve from '@rollup/plugin-node-resolve';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import summary from 'rollup-plugin-summary';
@@ -14,7 +14,7 @@ function onwarn(warning) {
 }
 
 // Configure an instance of @web/rollup-plugin-html
-const htmlPlugin = html({
+const htmlPlugin = rollupPluginHTML({
   rootDir: './',
   extractAssets: true,
 });
