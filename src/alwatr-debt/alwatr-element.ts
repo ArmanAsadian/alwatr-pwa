@@ -4,7 +4,7 @@ import type {PropertyValues} from 'lit';
 
 // TODO: refactor to separate mixins
 export class AlwatrElement extends LitElement {
-  protected _logger = createLogger(`<${this.tagName}>`);
+  protected _logger = createLogger(`<${this.tagName.toLowerCase()}>`);
 
   constructor() {
     super();
