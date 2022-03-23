@@ -15,34 +15,31 @@ import type {RoutesConfig} from '@alwatr/router';
  */
 @customElement('alwatr-pwa')
 export class AlwatrPwa extends AlwatrElement {
-  static override styles = [
-    AlwatrElement.styles,
-    // @TODO: rethink about `contain` in all elements https://developers.google.com/web/updates/2016/06/css-containment
-    css`
-      :host {
-        inset: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        display: flex;
-        position: absolute;
-        flex-direction: column;
-        justify-content: space-between;
-        contain: layout size style;
-        overflow: hidden;
-        z-index: 0
-      }
+  // @TODO: rethink about `contain` in all elements https://developers.google.com/web/updates/2016/06/css-containment
+  static override styles = css`
+    :host {
+      inset: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      justify-content: space-between;
+      contain: layout size style;
+      overflow: hidden;
+      z-index: 0
+    }
 
-      .page {
-        position: relative;
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 0%;
-        contain: size layout style;
-      }
-    `,
-  ];
+    .page {
+      position: relative;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0%;
+      contain: size layout style;
+    }
+  `;
 
   constructor() {
     super();

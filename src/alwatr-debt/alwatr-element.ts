@@ -1,15 +1,9 @@
-import {css, LitElement} from 'lit';
+import {LitElement} from 'lit';
 import {createLogger} from '@alwatr/logger';
-import type {PropertyValues, CSSResultGroup} from 'lit';
+import type {PropertyValues} from 'lit';
 
 // @TODO: refactor to separate mixins
 export class AlwatrElement extends LitElement {
-  static override styles: CSSResultGroup = css`
-    :host {
-      display: block;
-    }
-  `;
-
   protected _logger = createLogger(`<${this.tagName}>`);
 
   constructor() {
