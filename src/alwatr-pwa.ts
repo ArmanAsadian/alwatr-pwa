@@ -67,13 +67,7 @@ export class AlwatrPwa extends AlwatrElement {
     map: (route) => this._activePage = route.sectionList[0]?.toString().trim() || 'home',
     list: {
       'home': {
-        render: () => html`<page-home>Page Home ...</page-home>`,
-      },
-      'about': {
-        render: () => html`<page-about>Page About ...</page-about>`,
-      },
-      'article': {
-        render: (route) => html`<page-article>Page Article ${route.sectionList[1]} ...</page-article>`,
+        render: () => html`<page-home></page-home>`,
       },
     },
   };
@@ -110,7 +104,7 @@ export class AlwatrPwa extends AlwatrElement {
           href=${router.makeUrl({sectionList: ['home']})}
           ?selected=${this._activePage === 'home'}
         >
-          <ion-label>Home</ion-label>
+          <ion-label>خانه</ion-label>
           <ion-icon name="home-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
@@ -118,31 +112,31 @@ export class AlwatrPwa extends AlwatrElement {
           href=${router.makeUrl({sectionList: ['about']})}
           ?selected=${this._activePage === 'about'}
         >
-          <ion-label>About</ion-label>
-          <ion-icon name="planet-outline"></ion-icon>
+          <ion-label>احمد کیست</ion-label>
+          <ion-icon name="person-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
           href=${router.makeUrl({sectionList: ['article']})}
           ?selected=${this._activePage === 'article'}
         >
-          <ion-label>Article</ion-label>
-          <ion-icon name="book-outline"></ion-icon>
+          <ion-label>اعتقادات</ion-label>
+          <ion-icon name="layers-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
           href=${router.makeUrl({sectionList: ['contact']})}
           ?selected=${this._activePage === 'contact'}
         >
-          <ion-label>Contact</ion-label>
-          <ion-icon name="call-outline"></ion-icon>
+          <ion-label>مقالات</ion-label>
+          <ion-icon name="newspaper-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
           href=${router.makeUrl({sectionList: ['setting']})}
           ?selected=${this._activePage === 'setting'}
         >
-          <ion-label>Setting</ion-label>
+          <ion-label>تنظیمات</ion-label>
           <ion-icon name="cog-outline"></ion-icon>
         </ion-tab-button>
       </ion-tab-bar>
