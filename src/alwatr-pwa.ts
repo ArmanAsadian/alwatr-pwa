@@ -5,6 +5,7 @@ import {state} from 'lit/decorators/state.js';
 import {router} from '@alwatr/router';
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
 import './elements/page-home';
+import './elements/page-article-list';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
 import type {RoutesConfig} from '@alwatr/router';
@@ -69,6 +70,9 @@ export class AlwatrPwa extends AlwatrElement {
       'home': {
         render: () => html`<page-home></page-home>`,
       },
+      'article-list': {
+        render: () => html`<page-article-list></page-article-list>`,
+      },
     },
   };
 
@@ -117,8 +121,8 @@ export class AlwatrPwa extends AlwatrElement {
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
-          href=${router.makeUrl({sectionList: ['article']})}
-          ?selected=${this._activePage === 'article'}
+          href=${router.makeUrl({sectionList: ['article-list']})}
+          ?selected=${this._activePage === 'article-list'}
         >
           <ion-label>اعتقادات</ion-label>
           <ion-icon name="layers-outline"></ion-icon>
