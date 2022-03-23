@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators/custom-element.js';
 import {AlwatrElement} from '../alwatr-debt/alwatr-element';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
+import {router} from '@alwatr/router';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -42,6 +43,36 @@ export class PageHome extends AlwatrElement {
       --padding-top: var(--page-content-padding);
       --padding-bottom: var(--page-content-padding);
     }
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cart-image {
+      display: flex;
+      text-decoration: none;
+      justify-content: flex-start;
+      align-items: flex-start;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      width: 100%;
+      height: 42vw;
+      border-radius: 4px;
+      box-shadow: rgba(0, 0, 0, 12%) 0px 4px 16px;
+    }
+
+    .cart-image h2 {
+      color: white;
+      font-weight: 400;
+      margin: auto;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-size: 20px;
+    }
   `;
 
   private _listenerList: Array<unknown> = [];
@@ -60,12 +91,61 @@ export class PageHome extends AlwatrElement {
     return html`
       <ion-header>
         <ion-toolbar>
-          <ion-title>Home</ion-title>
+          <ion-title>عنوان برنامه ...</ion-title>
         </ion-toolbar>
       </ion-header>
 
       <ion-content class="padding">
-        Main Content
+        <div class="grid-container">
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1005.jpeg');">
+            <h2 style="background-color: rgba(160, 122, 75, 90%);">احمد کیست؟</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1014.jpeg');">
+            <h2 style="background-color: rgba(122, 174, 185, 90%);">باورها و اعتقادات</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1025.jpeg');">
+            <h2 style="background-color: rgba(171, 185, 80, 90%);">عنوان نمونه</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1010.jpeg');">
+            <h2 style="background-color: rgba(60, 78, 83, 90%);">مقالات</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1078.jpeg');">
+            <h2 style="background-color: rgba(69, 50, 83, 0.9);">ویدیوها</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1059.jpeg');">
+            <h2 style="background-color: rgba(166, 138, 121, 90%);">پادکست</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1071.jpeg');">
+            <h2 style="background-color: rgba(28, 117, 120, 0.9);">وب‌سایت‌ها</h2>
+          </a>
+          <a
+            class="cart-image"
+            href=${router.makeUrl({sectionList: ['aaa']})}
+            style="background-image: url('/images/1067.jpeg');">
+            <h2 style="background-color: rgba(176, 134, 105, 0.9);">شبکه‌های اجتماعی</h2>
+          </a>
+        </div>
       </ion-content>
     `;
   }
