@@ -2,7 +2,7 @@ import {LitElement} from 'lit';
 import {createLogger} from '@alwatr/logger';
 import type {PropertyValues} from 'lit';
 
-// @TODO: refactor to separate mixins
+// TODO: refactor to separate mixins
 export class AlwatrElement extends LitElement {
   protected _logger = createLogger(`<${this.tagName}>`);
 

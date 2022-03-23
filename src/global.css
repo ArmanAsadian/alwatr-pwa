@@ -1,3 +1,7 @@
+html {
+  --page-content-padding: 16px;
+}
+
 html.ios {
   --ion-default-font: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Roboto",sans-serif
 }

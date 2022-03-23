@@ -1,10 +1,19 @@
-import {css, html} from 'lit';
+
+import {css, html, nothing} from 'lit';
 import {customElement} from 'lit/decorators/custom-element.js';
+import {state} from 'lit/decorators/state.js';
 import {router} from '@alwatr/router';
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
+import './elements/page-home';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
 import type {RoutesConfig} from '@alwatr/router';
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'alwatr-pwa': AlwatrPwa;
+  }
+}
 
 /**
  * Alwatr PWA Root Element
@@ -15,7 +24,8 @@ import type {RoutesConfig} from '@alwatr/router';
  */
 @customElement('alwatr-pwa')
 export class AlwatrPwa extends AlwatrElement {
-  // @TODO: rethink about `contain` in all elements https://developers.google.com/web/updates/2016/06/css-containment
+  // TODO: import pageStyle
+  // TODO: rethink about `contain` in all elements https://developers.google.com/web/updates/2016/06/css-containment
   static override styles = css`
     :host {
       inset: 0;
@@ -32,7 +42,7 @@ export class AlwatrPwa extends AlwatrElement {
       z-index: 0
     }
 
-    .page {
+    .page-container {
       position: relative;
       flex-grow: 1;
       flex-shrink: 1;
@@ -40,6 +50,9 @@ export class AlwatrPwa extends AlwatrElement {
       contain: size layout style;
     }
   `;
+
+  @state()
+  protected _hideTabBar = false;
 
   constructor() {
     super();
@@ -49,9 +62,9 @@ export class AlwatrPwa extends AlwatrElement {
   private _activePage = 'home';
 
   private _routes: RoutesConfig = {
-    // @TODO: refactor route, we need to get active page!
-    // @TODO: ability to redirect!
-    map: (route) => this._activePage = route.sectionList[0]?.toString() || 'home',
+    // TODO: refactor route, we need to get active page!
+    // TODO: ability to redirect!
+    map: (route) => this._activePage = route.sectionList[0]?.toString().trim() || 'home',
     list: {
       'home': {
         render: () => html`<page-home>Page Home ...</page-home>`,
@@ -70,6 +83,7 @@ export class AlwatrPwa extends AlwatrElement {
   override connectedCallback(): void {
     super.connectedCallback();
     this._listenerList.push(router.signal.addListener(() => this.requestUpdate()));
+    // TODO: make `hide-tab-bar` signal and bind to this._hideTabBar
   }
 
   override disconnectedCallback(): void {
@@ -79,15 +93,16 @@ export class AlwatrPwa extends AlwatrElement {
 
   override render(): TemplateResult {
     return html`
-      <div class="page">
+      <div class="page-container">
         ${router.outlet(this._routes)}
       </div>
       ${this._renderTabBar()}
     `;
   }
 
-  protected _renderTabBar(): TemplateResult {
-    // @TODO: dynamic from menuList
+  protected _renderTabBar(): TemplateResult | typeof nothing {
+    if (this._hideTabBar) return nothing;
+    // TODO: dynamic from menuList
     return html`
       <ion-tab-bar>
         <ion-tab-button
