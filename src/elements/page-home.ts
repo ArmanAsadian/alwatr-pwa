@@ -105,9 +105,9 @@ export class PageHome extends AlwatrElement {
 
   override render(): TemplateResult {
     return html`
-      <ion-header>
+      <ion-header mode="ios" dir="rtl">
         <ion-toolbar>
-          <ion-title>عنوان برنامه ...</ion-title>
+          <ion-title>احمد الحسن (یمانی)</ion-title>
         </ion-toolbar>
       </ion-header>
 
@@ -117,7 +117,7 @@ export class PageHome extends AlwatrElement {
             class="cart-image"
             href=${router.makeUrl({sectionList: ['article-list']})}
             style="background-image: url('/images/1005.jpeg'); height: 30vw;">
-            <h2 style="background-color: rgba(160, 122, 75, 90%);">احمد کیست؟</h2>
+            <h2 style="background-color: rgba(160, 122, 75, 90%);">احمد الحسن کیست؟</h2>
           </a>
           <a
             class="cart-image"

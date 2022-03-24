@@ -116,7 +116,7 @@ export class AlwatrPwa extends AlwatrElement {
           href=${router.makeUrl({sectionList: ['about']})}
           ?selected=${this._activePage === 'about'}
         >
-          <ion-label>احمد کیست</ion-label>
+          <ion-label>احمد الحسن</ion-label>
           <ion-icon name="person-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
