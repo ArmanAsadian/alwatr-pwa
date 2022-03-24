@@ -17,7 +17,7 @@
 }
 
 html {
-  --page-content-padding: 16px;
+  --page-content-padding: 8px;
 }
 
 html.ios {

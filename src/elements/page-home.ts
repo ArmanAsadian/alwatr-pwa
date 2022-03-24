@@ -50,7 +50,7 @@ export class PageHome extends AlwatrElement {
       gap: 8px;
     }
 
-    .cart-image {
+    .card-image {
       display: flex;
       text-decoration: none;
       justify-content: flex-start;
@@ -65,7 +65,7 @@ export class PageHome extends AlwatrElement {
       box-shadow: rgba(0, 0, 0, 12%) 0px 4px 16px;
     }
 
-    .cart-image h2 {
+    .card-image h2 {
       color: white;
       font-weight: 400;
       margin: auto;
@@ -74,19 +74,19 @@ export class PageHome extends AlwatrElement {
       font-size: 20px;
     }
 
-    .cart-group {
+    .card-group {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .cart-group .cart-image {
+    .card-group .card-image {
       flex-grow: 1;
       flex-shrink: 1;
       flex-basis: 40%;
     }
 
-    .cart-group .cart-image h2 {
+    .card-group .card-image h2 {
       font-size: 16px;
     }
   `;
@@ -114,52 +114,52 @@ export class PageHome extends AlwatrElement {
       <ion-content>
         <div class="menu-container">
           <a
-            class="cart-image"
+            class="card-image"
             href=${router.makeUrl({sectionList: ['article-list']})}
             style="background-image: url('/images/1005.jpeg'); height: 30vw;">
             <h2 style="background-color: rgba(160, 122, 75, 90%);">احمد الحسن کیست؟</h2>
           </a>
           <a
-            class="cart-image"
-            href=${router.makeUrl({sectionList: ['article-list']})}
+            class="card-image"
+            href=${router.makeUrl({sectionList: ['card-list']})}
             style="background-image: url('/images/1014.jpeg'); height: 50vw;">
             <h2 style="background-color: rgba(122, 174, 185, 90%);">باورها و اعتقادات</h2>
           </a>
           <a
-            class="cart-image"
+            class="card-image"
             href=${router.makeUrl({sectionList: ['article-list']})}
             style="background-image: url('/images/1010.jpeg');">
             <h2 style="background-color: rgba(60, 78, 83, 90%);">مقالات</h2>
           </a>
-          <div class="cart-group">
+          <div class="card-group">
             <a
-              class="cart-image"
+              class="card-image"
               href=${router.makeUrl({sectionList: ['article-list']})}
               style="background-image: url('/images/1078.jpeg');">
               <h2 style="background-color: rgba(69, 50, 83, 0.9);">ویدیوها</h2>
             </a>
             <a
-              class="cart-image"
+              class="card-image"
               href=${router.makeUrl({sectionList: ['article-list']})}
               style="background-image: url('/images/1059.jpeg');">
               <h2 style="background-color: rgba(166, 138, 121, 90%);">پادکست</h2>
             </a>
           </div>
           <a
-            class="cart-image"
+            class="card-image"
             href=${router.makeUrl({sectionList: ['article-list']})}
             style="background-image: url('/images/1025.jpeg');">
             <h2 style="background-color: rgba(171, 185, 80, 90%);">عنوان نمونه</h2>
           </a>
-          <div class="cart-group">
+          <div class="card-group">
             <a
-              class="cart-image"
+              class="card-image"
               href=${router.makeUrl({sectionList: ['article-list']})}
               style="background-image: url('/images/1071.jpeg');">
               <h2 style="background-color: rgba(28, 117, 120, 0.9);">وب‌سایت‌ها</h2>
             </a>
             <a
-              class="cart-image"
+              class="card-image"
               href=${router.makeUrl({sectionList: ['article-list']})}
               style="background-image: url('/images/1067.jpeg');">
               <h2 style="background-color: rgba(176, 134, 105, 0.9);">شبکه‌های اجتماعی</h2>

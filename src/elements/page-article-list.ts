@@ -1,4 +1,5 @@
 import {css, html} from 'lit';
+import {CSSResultGroup} from 'lit';
 import {live} from 'lit/directives/live.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {customElement} from 'lit/decorators/custom-element.js';
@@ -28,7 +29,7 @@ interface SearchbarChangeEventDetail {
 @customElement('page-article-list')
 export class PageArticleList extends AlwatrElement {
   // TODO: import pageStyle
-  static override styles = css`
+  static override styles: CSSResultGroup = css`
     :host {
       inset: 0;
       left: 0;
@@ -47,8 +48,6 @@ export class PageArticleList extends AlwatrElement {
     ion-content {
       --padding-start: var(--page-content-padding);
       --padding-end: var(--page-content-padding);
-      --padding-top: var(--page-content-padding);
-      --padding-bottom: var(--page-content-padding);
     }
 
     input[type=search]::-webkit-search-cancel-button,
@@ -60,7 +59,7 @@ export class PageArticleList extends AlwatrElement {
   @state()
   protected search = '';
 
-  private _listenerList: Array<unknown> = [];
+  protected _listenerList: Array<unknown> = [];
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -72,7 +71,7 @@ export class PageArticleList extends AlwatrElement {
     this._listenerList.forEach((listener) => (listener as ListenerInterface<keyof AlwatrSignals>).remove());
   }
 
-  override render(): TemplateResult {
+  protected override render(): TemplateResult {
     return html`
       <ion-header mode="ios" translucent dir="rtl">
         <ion-toolbar>
@@ -95,7 +94,7 @@ export class PageArticleList extends AlwatrElement {
     `;
   }
 
-  _onSearch(event: CustomEvent<SearchbarChangeEventDetail>): void {
+  protected _onSearch(event: CustomEvent<SearchbarChangeEventDetail>): void {
     const value = event.detail.value;
     this._logger.logMethodArgs('_onSearch', {value});
     this.search = value ?? '';
@@ -159,7 +158,7 @@ export class PageArticleList extends AlwatrElement {
       },
     ];
 
-  _renderList(): unknown {
+  protected _renderList(): unknown {
     const list = this.search?.length > 0 ?
       this.ـlist.filter((item) => (item.title + item.description).indexOf(this.search) !== -1) :
       this.ـlist.concat(this.ـlist); // duplicate list for demo

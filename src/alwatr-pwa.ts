@@ -6,6 +6,8 @@ import {router} from '@alwatr/router';
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
 import './elements/page-home';
 import './elements/page-article-list';
+import './elements/page-card-list';
+import './elements/page-big-card-list';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
 import type {RoutesConfig} from '@alwatr/router';
@@ -73,6 +75,12 @@ export class AlwatrPwa extends AlwatrElement {
       'article-list': {
         render: () => html`<page-article-list></page-article-list>`,
       },
+      'card-list': {
+        render: () => html`<page-card-list></page-card-list>`,
+      },
+      'big-card-list': {
+        render: () => html`<page-big-card-list></page-big-card-list>`,
+      },
     },
   };
 
@@ -113,24 +121,24 @@ export class AlwatrPwa extends AlwatrElement {
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
-          href=${router.makeUrl({sectionList: ['about']})}
-          ?selected=${this._activePage === 'about'}
+          href=${router.makeUrl({sectionList: ['article-list']})}
+          ?selected=${this._activePage === 'article-list'}
         >
           <ion-label>احمد الحسن</ion-label>
           <ion-icon name="person-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
-          href=${router.makeUrl({sectionList: ['article-list']})}
-          ?selected=${this._activePage === 'article-list'}
+          href=${router.makeUrl({sectionList: ['big-card-list']})}
+          ?selected=${this._activePage === 'big-card-list'}
         >
           <ion-label>اعتقادات</ion-label>
           <ion-icon name="layers-outline"></ion-icon>
         </ion-tab-button>
         <ion-tab-button
           layout="icon-top"
-          href=${router.makeUrl({sectionList: ['contact']})}
-          ?selected=${this._activePage === 'contact'}
+          href=${router.makeUrl({sectionList: ['card-list']})}
+          ?selected=${this._activePage === 'card-list'}
         >
           <ion-label>مقالات</ion-label>
           <ion-icon name="newspaper-outline"></ion-icon>
