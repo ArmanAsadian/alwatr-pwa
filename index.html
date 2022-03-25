@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr" class="md">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2, user-scalable=yes, viewport-fit=cover" />
@@ -10,8 +10,9 @@
 
   <base href="/" />
 
-  <link rel="preconnect" href="https://polyfill.io/" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://polyfill.io/" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net/" crossorigin />
+  <link rel="preload" href="https://fonts.gstatic.com/s/notosansarabic/v14/nwpCtLGrOAZMl5nJ_wfgRg3DrWFZWsnVBJ_sS6tlqHHFlj4wv4rqxzLI.woff2" as="font" type="font/woff2" crossorigin />
 
   <link rel="icon" href="images/icon-192.png" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#3277b9" />
@@ -47,13 +48,15 @@
   <link rel="stylesheet" href="src/global.css" />
 </head>
 <body>
-
-  <alwatr-pwa></alwatr-pwa>
+  <ion-app>
+    <alwatr-pwa></alwatr-pwa>
+  </ion-app>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.toggleAttribute"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.11/dist/ionic/ionic.esm.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.12/dist/ionic/ionic.esm.js"></script>
   <script type="module" src="src/alwatr-pwa.js"></script>
-  <script nomodule defer src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.11/dist/ionic/ionic.js"></script>
+
+  <script nomodule defer src="https://cdn.jsdelivr.net/npm/@ionic/core@6.0.12/dist/ionic/ionic.js"></script>
 
   <noscript>
     <div class="noscript">
