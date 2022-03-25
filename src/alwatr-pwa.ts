@@ -6,11 +6,10 @@ import {router} from '@alwatr/router';
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
 import './elements/page-home';
 import './elements/page-article-list';
-import './elements/page-card-list';
-import './elements/page-big-card-list';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
 import type {RoutesConfig} from '@alwatr/router';
+import {mainTabBar} from './config';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -62,9 +61,9 @@ export class AlwatrPwa extends AlwatrElement {
     router.initial();
   }
 
-  private _activePage = 'home';
+  protected _activePage = 'home';
 
-  private _routes: RoutesConfig = {
+  protected _routes: RoutesConfig = {
     // TODO: refactor route, we need to get active page!
     // TODO: ability to redirect!
     map: (route) => this._activePage = route.sectionList[0]?.toString().trim() || 'home',
@@ -72,19 +71,27 @@ export class AlwatrPwa extends AlwatrElement {
       'home': {
         render: () => html`<page-home></page-home>`,
       },
-      'article-list': {
-        render: () => html`<page-article-list></page-article-list>`,
+      'beliefs': {
+        render: () => html`<page-article-list type="card"></page-article-list>`,
       },
-      'card-list': {
-        render: () => html`<page-card-list></page-card-list>`,
+      'articles': {
+        render: () => html`<page-article-list type="mini-card"></page-article-list>`,
       },
-      'big-card-list': {
-        render: () => html`<page-big-card-list></page-big-card-list>`,
+      'bookmarks': {
+        render: () => html`<page-article-list type="minimal"></page-article-list>`,
+      },
+      'about-him': {
+        render: () => html`<page-article-detail article-id="1">در دست ساخت...</page-article-detail>`,
+      },
+      'article': {
+        render: (route) => html`
+          <page-article-detail article-id=${route.sectionList[1]}>در دست ساخت...</page-article-detail>
+        `,
       },
     },
   };
 
-  private _listenerList: Array<unknown> = [];
+  protected _listenerList: Array<unknown> = [];
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -108,50 +115,21 @@ export class AlwatrPwa extends AlwatrElement {
 
   protected _renderTabBar(): TemplateResult | typeof nothing {
     if (this._hideTabBar) return nothing;
-    // TODO: dynamic from menuList
-    return html`
-      <ion-tab-bar>
+
+    const listTemplate = mainTabBar.map((item) => {
+      const selected = this._activePage === item.id;
+      return html`
         <ion-tab-button
           layout="icon-top"
-          href=${router.makeUrl({sectionList: ['home']})}
-          ?selected=${this._activePage === 'home'}
+          href=${router.makeUrl({sectionList: [item.id]})}
+          ?selected=${selected}
         >
-          <ion-label>خانه</ion-label>
-          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>${item.title}</ion-label>
+          <ion-icon name=${selected ? item.icon : item.icon + '-outline'}></ion-icon>
         </ion-tab-button>
-        <ion-tab-button
-          layout="icon-top"
-          href=${router.makeUrl({sectionList: ['article-list']})}
-          ?selected=${this._activePage === 'article-list'}
-        >
-          <ion-label>احمد الحسن</ion-label>
-          <ion-icon name="person-outline"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button
-          layout="icon-top"
-          href=${router.makeUrl({sectionList: ['big-card-list']})}
-          ?selected=${this._activePage === 'big-card-list'}
-        >
-          <ion-label>اعتقادات</ion-label>
-          <ion-icon name="layers-outline"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button
-          layout="icon-top"
-          href=${router.makeUrl({sectionList: ['card-list']})}
-          ?selected=${this._activePage === 'card-list'}
-        >
-          <ion-label>مقالات</ion-label>
-          <ion-icon name="newspaper-outline"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button
-          layout="icon-top"
-          href=${router.makeUrl({sectionList: ['setting']})}
-          ?selected=${this._activePage === 'setting'}
-        >
-          <ion-label>تنظیمات</ion-label>
-          <ion-icon name="cog-outline"></ion-icon>
-        </ion-tab-button>
-      </ion-tab-bar>
-    `;
+      `;
+    });
+
+    return html`<ion-tab-bar>${listTemplate}</ion-tab-bar>`;
   }
 }

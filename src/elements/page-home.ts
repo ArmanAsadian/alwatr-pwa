@@ -115,52 +115,52 @@ export class PageHome extends AlwatrElement {
         <div class="menu-container">
           <a
             class="card-image"
-            href=${router.makeUrl({sectionList: ['article-list']})}
+            href=${router.makeUrl({sectionList: ['about-him']})}
             style="background-image: url('/images/1005.jpeg'); height: 30vw;">
             <h2 style="background-color: rgba(160, 122, 75, 90%);">احمد الحسن کیست؟</h2>
           </a>
           <a
             class="card-image"
-            href=${router.makeUrl({sectionList: ['card-list']})}
+            href=${router.makeUrl({sectionList: ['beliefs']})}
             style="background-image: url('/images/1014.jpeg'); height: 50vw;">
             <h2 style="background-color: rgba(122, 174, 185, 90%);">باورها و اعتقادات</h2>
           </a>
           <a
             class="card-image"
-            href=${router.makeUrl({sectionList: ['article-list']})}
+            href=${router.makeUrl({sectionList: ['articles']})}
             style="background-image: url('/images/1010.jpeg');">
             <h2 style="background-color: rgba(60, 78, 83, 90%);">مقالات</h2>
           </a>
           <div class="card-group">
             <a
               class="card-image"
-              href=${router.makeUrl({sectionList: ['article-list']})}
+              href=${router.makeUrl({sectionList: ['articles']})}
               style="background-image: url('/images/1078.jpeg');">
               <h2 style="background-color: rgba(69, 50, 83, 0.9);">ویدیوها</h2>
             </a>
             <a
               class="card-image"
-              href=${router.makeUrl({sectionList: ['article-list']})}
+              href=${router.makeUrl({sectionList: ['articles']})}
               style="background-image: url('/images/1059.jpeg');">
               <h2 style="background-color: rgba(166, 138, 121, 90%);">پادکست</h2>
             </a>
           </div>
           <a
             class="card-image"
-            href=${router.makeUrl({sectionList: ['article-list']})}
+            href=${router.makeUrl({sectionList: ['bookmarks']})}
             style="background-image: url('/images/1025.jpeg');">
             <h2 style="background-color: rgba(171, 185, 80, 90%);">عنوان نمونه</h2>
           </a>
           <div class="card-group">
             <a
               class="card-image"
-              href=${router.makeUrl({sectionList: ['article-list']})}
+              href=${router.makeUrl({sectionList: ['articles']})}
               style="background-image: url('/images/1071.jpeg');">
               <h2 style="background-color: rgba(28, 117, 120, 0.9);">وب‌سایت‌ها</h2>
             </a>
             <a
               class="card-image"
-              href=${router.makeUrl({sectionList: ['article-list']})}
+              href=${router.makeUrl({sectionList: ['articles']})}
               style="background-image: url('/images/1067.jpeg');">
               <h2 style="background-color: rgba(176, 134, 105, 0.9);">شبکه‌های اجتماعی</h2>
             </a>
