@@ -1,5 +1,6 @@
-import {LitElement} from 'lit';
 import {createLogger} from '@alwatr/logger';
+import {LitElement} from 'lit';
+
 import type {PropertyValues} from 'lit';
 
 // TODO: refactor to separate mixins

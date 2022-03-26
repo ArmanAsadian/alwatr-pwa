@@ -1,9 +1,11 @@
+import {router} from '@alwatr/router';
 import {css, html} from 'lit';
 import {customElement} from 'lit/decorators/custom-element.js';
+
 import {AlwatrElement} from '../alwatr-debt/alwatr-element';
-import type {TemplateResult} from 'lit';
+
 import type {ListenerInterface} from '@alwatr/signal';
-import {router} from '@alwatr/router';
+import type {TemplateResult} from 'lit';
 
 declare global {
   interface HTMLElementTagNameMap {

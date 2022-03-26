@@ -1,9 +1,10 @@
-import {css, html} from 'lit';
-import {CSSResultGroup} from 'lit';
+import {css, html, CSSResultGroup} from 'lit';
 import {customElement} from 'lit/decorators/custom-element.js';
+
 import {AlwatrElement} from '../alwatr-debt/alwatr-element';
-import type {TemplateResult} from 'lit';
+
 import type {ListenerInterface} from '@alwatr/signal';
+import type {TemplateResult} from 'lit';
 
 declare global {
   interface HTMLElementTagNameMap {
