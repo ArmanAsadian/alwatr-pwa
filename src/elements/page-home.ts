@@ -23,31 +23,22 @@ export class PageHome extends AlwatrElement {
   // TODO: import pageStyle
   static override styles = css`
     :host {
-      inset: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
       display: flex;
-      position: absolute;
       flex-direction: column;
-      justify-content: space-between;
-      contain: layout size style;
-      overflow: hidden;
-      z-index: 0
+      --gap: 12px
     }
 
     ion-content {
-      --padding-start: var(--page-content-padding);
-      --padding-end: var(--page-content-padding);
-      --padding-top: var(--page-content-padding);
-      --padding-bottom: var(--page-content-padding);
+      --padding-start: var(--gap);
+      --padding-end: var(--gap);
+      --padding-top: var(--gap);
+      --padding-bottom: var(--gap);
     }
 
     .menu-container {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: var(--gap);
     }
 
     .card-image {
