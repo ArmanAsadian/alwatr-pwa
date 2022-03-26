@@ -55,6 +55,16 @@ export class PageArticleList extends AlwatrElement {
       max-width: 100%;
       border: 0;
     }
+
+    .toolbar-searchbar.md {
+      --min-height: 46px;
+    }
+
+    ion-toolbar.md ion-searchbar {
+      height: 46px;
+      padding-bottom: 0;
+      align-items: flex-start;
+    }
   `;
 
   @property({type: String})
@@ -77,12 +87,13 @@ export class PageArticleList extends AlwatrElement {
 
   protected override render(): TemplateResult {
     return html`
-      <ion-header mode="ios" translucent dir="rtl">
+      <ion-header translucent dir="rtl">
         <ion-toolbar>
           <ion-title>لیست مقالات</ion-title>
         </ion-toolbar>
         <ion-toolbar>
           <ion-searchbar
+            mode="ios"
             autocomplete="on"
             placeholder="جستجو ..."
             .value=${live(this._search)}

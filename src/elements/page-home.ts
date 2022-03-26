@@ -96,7 +96,7 @@ export class PageHome extends AlwatrElement {
 
   override render(): TemplateResult {
     return html`
-      <ion-header mode="ios" dir="rtl">
+      <ion-header dir="rtl">
         <ion-toolbar>
           <ion-title>احمد الحسن (یمانی)</ion-title>
         </ion-toolbar>
