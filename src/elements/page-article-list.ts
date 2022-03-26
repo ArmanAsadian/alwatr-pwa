@@ -1,15 +1,17 @@
-import {css, html} from 'lit';
-import {CSSResultGroup} from 'lit';
-import {live} from 'lit/directives/live.js';
-import {repeat} from 'lit/directives/repeat.js';
+import {router} from '@alwatr/router';
+import {css, html, CSSResultGroup} from 'lit';
 import {customElement} from 'lit/decorators/custom-element.js';
 import {property} from 'lit/decorators/property.js';
-import {AlwatrElement} from '../alwatr-debt/alwatr-element';
-import type {TemplateResult} from 'lit';
-import type {ListenerInterface} from '@alwatr/signal';
 import {state} from 'lit/decorators/state.js';
-import {router} from '@alwatr/router';
+import {live} from 'lit/directives/live.js';
+import {repeat} from 'lit/directives/repeat.js';
+
+import {AlwatrElement} from '../alwatr-debt/alwatr-element';
 import {sampleDataList} from '../config';
+
+import type {ListenerInterface} from '@alwatr/signal';
+import type {TemplateResult} from 'lit';
+
 
 declare global {
   interface HTMLElementTagNameMap {

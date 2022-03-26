@@ -1,16 +1,18 @@
-
+import {router} from '@alwatr/router';
 import {css, html, nothing} from 'lit';
 import {customElement} from 'lit/decorators/custom-element.js';
 import {state} from 'lit/decorators/state.js';
-import {router} from '@alwatr/router';
+
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
 import './elements/page-home';
 import './elements/page-article-list';
 import './elements/page-article-detail';
-import type {TemplateResult} from 'lit';
-import type {ListenerInterface} from '@alwatr/signal';
-import type {RoutesConfig} from '@alwatr/router';
 import {mainTabBar} from './config';
+
+import type {RoutesConfig} from '@alwatr/router';
+import type {ListenerInterface} from '@alwatr/signal';
+import type {TemplateResult} from 'lit';
+
 
 declare global {
   interface HTMLElementTagNameMap {
