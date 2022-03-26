@@ -29,6 +29,7 @@ export class AlwatrElement extends LitElement {
   protected override firstUpdated(_changedProperties: PropertyValues): void {
     this._logger.logMethod('firstUpdated');
     super.firstUpdated(_changedProperties);
+    this.removeAttribute('unresolved');
   }
 
   override dispatchEvent(event: CustomEvent | Event): boolean {
