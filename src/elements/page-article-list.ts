@@ -30,26 +30,16 @@ interface SearchbarChangeEventDetail {
  */
 @customElement('page-article-list')
 export class PageArticleList extends AlwatrElement {
-  // TODO: import pageStyle
   static override styles: CSSResultGroup = css`
     :host {
-      inset: 0;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
       display: flex;
-      position: absolute;
       flex-direction: column;
-      justify-content: space-between;
-      contain: layout size style;
-      overflow: hidden;
-      z-index: 0
+      --gap: 16px;
     }
 
     ion-content {
-      --padding-start: var(--page-content-padding);
-      --padding-end: var(--page-content-padding);
+      --padding-start: 8px;
+      --padding-end: 8px;
     }
 
     input[type=search]::-webkit-search-cancel-button,
@@ -58,8 +48,7 @@ export class PageArticleList extends AlwatrElement {
     }
 
     ion-card.md {
-      margin-top: 16px;
-      margin-bottom: 16px;
+      margin: var(--gap) 8px;
     }
 
     ion-card img {

@@ -51,6 +51,33 @@ export class AlwatrPwa extends AlwatrElement {
       flex-basis: 0%;
       contain: size layout style;
     }
+
+    page-home,
+    page-article-list,
+    page-article-detail {
+      inset: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      justify-content: space-between;
+      contain: layout size style;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    /* This will be displayed only on lazy loading. */
+    [unresolved]::after {
+      content: '...';
+      display: block;
+      font-size: 2em;
+      padding-top: 30vh;
+      letter-spacing: 3px;
+      text-align: center;
+    }
   `;
 
   @state()
@@ -69,19 +96,19 @@ export class AlwatrPwa extends AlwatrElement {
     map: (route) => this._activePage = route.sectionList[0]?.toString().trim() || 'home',
     list: {
       'home': {
-        render: () => html`<page-home></page-home>`,
+        render: () => html`<page-home unresolved></page-home>`,
       },
       'beliefs': {
-        render: () => html`<page-article-list type="card"></page-article-list>`,
+        render: () => html`<page-article-list type="card" unresolved></page-article-list>`,
       },
       'articles': {
-        render: () => html`<page-article-list type="mini-card"></page-article-list>`,
+        render: () => html`<page-article-list type="mini-card" unresolved></page-article-list>`,
       },
       'bookmarks': {
-        render: () => html`<page-article-list type="minimal"></page-article-list>`,
+        render: () => html`<page-article-list type="minimal" unresolved></page-article-list>`,
       },
       'about-him': {
-        render: () => html`<page-article-detail article-id="1">در دست ساخت...</page-article-detail>`,
+        render: () => html`<page-article-detail article-id="1" unresolved>در دست ساخت...</page-article-detail>`,
       },
       'article': {
         render: (route) => html`
