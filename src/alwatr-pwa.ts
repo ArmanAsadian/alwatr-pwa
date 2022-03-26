@@ -6,6 +6,7 @@ import {router} from '@alwatr/router';
 import {AlwatrElement} from './alwatr-debt/alwatr-element';
 import './elements/page-home';
 import './elements/page-article-list';
+import './elements/page-article-detail';
 import type {TemplateResult} from 'lit';
 import type {ListenerInterface} from '@alwatr/signal';
 import type {RoutesConfig} from '@alwatr/router';
